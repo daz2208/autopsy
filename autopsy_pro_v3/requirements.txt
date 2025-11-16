@@ -1,0 +1,24 @@
+# Core dependencies
+# Python 3.8+
+
+# Optional framework dependencies (for building projects)
+django>=4.2.0
+flask>=2.3.0
+fastapi>=0.100.0
+uvicorn[standard]>=0.23.0
+
+# Optional CLI enhancements
+rich>=13.0.0  # Better CLI output
+click>=8.1.0  # Alternative CLI framework
+
+# Optional GUI dependencies
+# tkinter is included with Python
+
+# Development dependencies (optional)
+pytest>=7.4.0
+black>=23.0.0
+flake8>=6.0.0
+mypy>=1.4.0
+
+# Performance (optional)
+orjson>=3.9.0  # Faster JSON serialization
