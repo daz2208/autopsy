@@ -1,0 +1,38 @@
+{
+  "base_path": "/home/user/autopsy/autopsy_pro_v3",
+  "projects": [
+    {
+      "name": "autopsy_pro_v3",
+      "path": "/home/user/autopsy/autopsy_pro_v3",
+      "type": "Python",
+      "files": 15,
+      "size_bytes": 91265,
+      "last_modified": 1763293631.0,
+      "code_files": [
+        "/home/user/autopsy/autopsy_pro_v3/cli.py",
+        "/home/user/autopsy/autopsy_pro_v3/__init__.py",
+        "/home/user/autopsy/autopsy_pro_v3/models.py",
+        "/home/user/autopsy/autopsy_pro_v3/config.py",
+        "/home/user/autopsy/autopsy_pro_v3/extractor.py",
+        "/home/user/autopsy/autopsy_pro_v3/setup.py",
+        "/home/user/autopsy/autopsy_pro_v3/utils.py",
+        "/home/user/autopsy/autopsy_pro_v3/scanner.py"
+      ],
+      "dependencies": [
+        "setuptools",
+        "pip"
+      ],
+      "frameworks": [
+        "Python Package",
+        "Python"
+      ],
+      "languages": [
+        "Python"
+      ],
+      "complexity_score": 0.0,
+      "health_score": 0.0
+    }
+  ],
+  "scan_time": 0.0030901432037353516,
+  "timestamp": "2025-11-16T15:42:40.407547"
+}

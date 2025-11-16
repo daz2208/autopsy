@@ -19,17 +19,26 @@ def compute_complexity(code: str, lang: str) -> int:
     Compute cyclomatic complexity estimate
     """
     complexity = 1  # Base complexity
-    
-    # Decision points
-    decision_keywords = ['if', 'elif', 'else', 'for', 'while', 'case', 'catch', 'except', '&&', '||', '?']
-    
-    for keyword in decision_keywords:
-        if lang in ['py', 'python']:
-            # Use word boundaries for Python
-            complexity += len(re.findall(rf'\b{keyword}\b', code))
-        else:
-            complexity += code.count(keyword)
-    
+
+    # Decision points - separate keywords from operators
+    python_keywords = ['if', 'elif', 'else', 'for', 'while', 'except']
+    other_keywords = ['case', 'catch']
+    operators = ['&&', '||', '?']
+
+    if lang in ['py', 'python']:
+        # Use word boundaries for Python keywords only
+        for keyword in python_keywords:
+            complexity += len(re.findall(rf'\b{re.escape(keyword)}\b', code))
+        # Python uses 'and', 'or' instead of &&, ||
+        complexity += len(re.findall(r'\b(and|or)\b', code))
+    else:
+        # For other languages, use word boundaries for keywords
+        for keyword in python_keywords + other_keywords:
+            complexity += len(re.findall(rf'\b{re.escape(keyword)}\b', code))
+        # Count operators separately without word boundaries
+        for operator in operators:
+            complexity += code.count(operator)
+
     return complexity
 
 
